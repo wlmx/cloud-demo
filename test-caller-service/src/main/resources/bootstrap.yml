@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: test-caller-service
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+feign:
+  hystrix:
+    enabled: true

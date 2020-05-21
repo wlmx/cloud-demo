@@ -1,0 +1,23 @@
+server:
+  port: ${NOMAD_HOST_PORT_http}
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: test-service
+          uri: lb://test-caller-service/
+          predicates:
+            - Path=/test-caller-service
+        - id: auth-service
+          uri: lb://auth-service/
+          predicates:
+            - Path=/auth-service
+#security:
+#  oauth2:
+#    client:
+#      provider:
+#        uaa:
+#          authorization-uri: http://localhost:${NOMAD_HOST_PORT_http}/auth-service/oauth/authorize
+#          token-uri: http://localhost:${NOMAD_HOST_PORT_http}/auth-service/oauth/token

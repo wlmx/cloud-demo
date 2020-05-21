@@ -1,0 +1,5 @@
+server:
+  port: ${NOMAD_HOST_PORT_http}
+spring:
+  application:
+    name: test-service
