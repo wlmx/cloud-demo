@@ -16,9 +16,10 @@ public class TestRestController {
 
     private final Environment environment;
 
+    private final TestDatabaseService testDatabaseService;
+
     @Value("${spring.application.name}")
     private String appName;
-
 
     @GetMapping("/getConfigTestProperty")
     public String getConfigTestProperty() {
@@ -31,6 +32,21 @@ public class TestRestController {
         String host = InetAddress.getLoopbackAddress().getHostName();
 
         return "id: [" + appName + "] (" + host + ":" + port + ")";
+    }
+
+    @GetMapping("/jooq")
+    public String jooq() {
+        return testDatabaseService.jooq();
+    }
+
+    @GetMapping("/jpa")
+    public String jpa() {
+        return testDatabaseService.jpa();
+    }
+
+    @GetMapping("/jdbc")
+    public String jdbc() {
+        return testDatabaseService.jdbc();
     }
 
 }
