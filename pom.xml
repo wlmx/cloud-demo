@@ -21,7 +21,7 @@
         <lombok.version>1.18.12</lombok.version>
         <swagger.version>2.9.2</swagger.version>
         <jooq.version>3.13.2</jooq.version>
-        <h2.version>1.4.199</h2.version>
+        <h2.version>2.1.210</h2.version>
         <hikaricp.version>3.4.5</hikaricp.version>
     </properties>
 
